@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerControler : MonoBehaviour
+public class SpikedMace : MonoBehaviour
 {
+    private int flag;
+    private float tiempo = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +15,6 @@ public class playerControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Rotate(new Vector3(0 , 0 , 45) * Time.deltaTime);
     }
 }
