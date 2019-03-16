@@ -12,6 +12,7 @@ TagManager:
   - lodo
   - morePoints
   - miniorPoints
+  - endScene
   layers:
   - Default
   - TransparentFX

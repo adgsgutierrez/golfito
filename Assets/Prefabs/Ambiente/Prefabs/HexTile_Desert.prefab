@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 95323236947736036}
   m_Layer: 0
   m_Name: HexBase
-  m_TagString: lodo
+  m_TagString: watterTramp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 8730757421939540863}
   m_Layer: 0
   m_Name: HexTile_Desert
-  m_TagString: lodo
+  m_TagString: watterTramp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 7975824525844218314}
   m_Layer: 0
   m_Name: HexTop_Desert
-  m_TagString: lodo
+  m_TagString: watterTramp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

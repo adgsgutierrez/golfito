@@ -2,18 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class playerControler : MonoBehaviour
 {
     private Rigidbody rb;
     public const float MULTIPLICATE_VELOCITY = 20f; 
     public float speed;
+    private Vector3 posicion;
     float moveHorizontal = 0.0f;
     float moveVertical = 0.0f;
     float multiplicateVelocity = 0;
-
-    private float vida = 100f;
+    public ParticleSystem sistemaParticulasDiamantes;
+    public ParticleSystem sistemaParticulasGolpe;
+    public AudioSource[] sounds;
+    private AudioSource audioRecoleccion;
+    private AudioSource audioGolpe;
+    private float vida = 50f;
     private int puntos = 0;
+
+    public int next;
     // Start is called before the first frame update
     int minute = 0;
     int second = 0;
@@ -30,6 +38,13 @@ public class playerControler : MonoBehaviour
     private bool endGame = false;
     void Start(){
         rb = GetComponent<Rigidbody>();
+        sounds  = GetComponents<AudioSource>();
+        audioRecoleccion = sounds[1];
+        audioGolpe = sounds[0];   
+        audioRecoleccion.Stop();
+        audioGolpe.Stop();
+        sistemaParticulasDiamantes.Stop();
+        sistemaParticulasGolpe.Stop();
         checkedVida();
     }
 
@@ -61,12 +76,24 @@ public class playerControler : MonoBehaviour
     void OnTriggerEnter(Collider other){
         Debug.Log("Colision");
         if(other.gameObject.CompareTag("objectTramp")){
+            audioGolpe.Play();
+            posicion = transform.position;
+            sistemaParticulasGolpe.transform.position = posicion ;
+            sistemaParticulasGolpe.Play();
             menosVida();
        }else if(other.gameObject.CompareTag("miniorPoints")){
+            audioGolpe.Play();
+            posicion = transform.position;
+            sistemaParticulasGolpe.transform.position = posicion ;
+            sistemaParticulasGolpe.Play();
             menosPuntos();
             other.gameObject.SetActive(false);
        }else if(other.gameObject.CompareTag("morePoints")){
+            audioRecoleccion.Play();
             masPuntos();
+            posicion = other.gameObject.transform.position;
+            sistemaParticulasDiamantes.transform.position = posicion ;
+            sistemaParticulasDiamantes.Play();
             other.gameObject.SetActive(false);
        }else if(other.gameObject.CompareTag("watterTramp")){
             speed = 0;
@@ -74,6 +101,8 @@ public class playerControler : MonoBehaviour
            gravedad = true;
        }else if(other.gameObject.CompareTag("lodo")){
            speed = 1;
+       }else if(other.gameObject.CompareTag("endScene")){
+           SceneManager.LoadScene(next);
        }
     }
 
@@ -87,7 +116,7 @@ public class playerControler : MonoBehaviour
     }
 
     public void menosPuntos(){
-        puntos = puntos - 10;
+        puntos = (puntos>0)?(puntos - 10):0;
         speed = 7;
         checkedVida();
     }
