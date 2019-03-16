@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 95254788511934920}
   m_Layer: 0
   m_Name: HexBase
-  m_TagString: Untagged
+  m_TagString: lodo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 6294281339330052201}
   m_Layer: 0
   m_Name: HexTop_StoneGround
-  m_TagString: Untagged
+  m_TagString: lodo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 4217800470620343054}
   m_Layer: 0
   m_Name: HexTile_Stone
-  m_TagString: Untagged
+  m_TagString: lodo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

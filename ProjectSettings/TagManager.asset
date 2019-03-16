@@ -6,6 +6,12 @@ TagManager:
   tags:
   - moreVelocity
   - minorVelocity
+  - objectTramp
+  - watterTramp
+  - gemaGravedad
+  - lodo
+  - morePoints
+  - miniorPoints
   layers:
   - Default
   - TransparentFX
