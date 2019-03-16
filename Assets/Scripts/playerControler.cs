@@ -33,9 +33,12 @@ public class playerControler : MonoBehaviour
     private Vector3 moveDirection = Vector3.zero;
     public Text tiempoView;
     public Text lifeView;
+    public Text points;
     float tiempo = 0.0f;
     private bool gravedad = false;
     private bool endGame = false;
+
+    
     void Start(){
         rb = GetComponent<Rigidbody>();
         sounds  = GetComponents<AudioSource>();
@@ -132,5 +135,6 @@ public class playerControler : MonoBehaviour
             life = life + "|";
         }
         lifeView.text = life;
+        points.text = "Puntos: " + puntos;
     }
 }
